@@ -1,0 +1,186 @@
+const pokemonUrls = [
+    'https://pokeapi.co/api/v2/pokemon/ditto',
+    'https://pokeapi.co/api/v2/pokemon/bulbasaur',
+    'https://pokeapi.co/api/v2/pokemon/ivysaur',
+    'https://pokeapi.co/api/v2/pokemon/venusaur',
+    'https://pokeapi.co/api/v2/pokemon/charmander',
+    'https://pokeapi.co/api/v2/pokemon/charmeleon',
+    'https://pokeapi.co/api/v2/pokemon/charizard',
+    'https://pokeapi.co/api/v2/pokemon/squirtle',
+    'https://pokeapi.co/api/v2/pokemon/wartortle',
+    'https://pokeapi.co/api/v2/pokemon/blastoise',
+    'https://pokeapi.co/api/v2/pokemon/caterpie',
+    'https://pokeapi.co/api/v2/pokemon/metapod',
+    'https://pokeapi.co/api/v2/pokemon/butterfree',
+    'https://pokeapi.co/api/v2/pokemon/weedle',
+    'https://pokeapi.co/api/v2/pokemon/kakuna',
+    'https://pokeapi.co/api/v2/pokemon/beedrill',
+    'https://pokeapi.co/api/v2/pokemon/pidgey',
+    'https://pokeapi.co/api/v2/pokemon/pidgeotto',
+    'https://pokeapi.co/api/v2/pokemon/pidgeot',
+    'https://pokeapi.co/api/v2/pokemon/rattata',
+    'https://pokeapi.co/api/v2/pokemon/raticate',
+    'https://pokeapi.co/api/v2/pokemon/spearow',
+    'https://pokeapi.co/api/v2/pokemon/fearow',
+    'https://pokeapi.co/api/v2/pokemon/ekans',
+    'https://pokeapi.co/api/v2/pokemon/arbok',
+    'https://pokeapi.co/api/v2/pokemon/pikachu',
+    'https://pokeapi.co/api/v2/pokemon/raichu',
+    'https://pokeapi.co/api/v2/pokemon/sandshrew',
+    'https://pokeapi.co/api/v2/pokemon/sandslash',
+    'https://pokeapi.co/api/v2/pokemon/nidoran-f',
+    'https://pokeapi.co/api/v2/pokemon/nidorina',
+    'https://pokeapi.co/api/v2/pokemon/nidoqueen',
+    'https://pokeapi.co/api/v2/pokemon/nidoran-m',
+    'https://pokeapi.co/api/v2/pokemon/nidorino',
+    'https://pokeapi.co/api/v2/pokemon/nidoking',
+    'https://pokeapi.co/api/v2/pokemon/clefairy',
+    'https://pokeapi.co/api/v2/pokemon/clefable',
+    'https://pokeapi.co/api/v2/pokemon/vulpix',
+    'https://pokeapi.co/api/v2/pokemon/ninetales',
+    'https://pokeapi.co/api/v2/pokemon/jigglypuff',
+    'https://pokeapi.co/api/v2/pokemon/wigglytuff',
+    'https://pokeapi.co/api/v2/pokemon/zubat',
+    'https://pokeapi.co/api/v2/pokemon/golbat',
+    'https://pokeapi.co/api/v2/pokemon/oddish',
+    'https://pokeapi.co/api/v2/pokemon/gloom',
+    'https://pokeapi.co/api/v2/pokemon/vileplume',
+    'https://pokeapi.co/api/v2/pokemon/paras',
+    'https://pokeapi.co/api/v2/pokemon/parasect',
+    'https://pokeapi.co/api/v2/pokemon/venomoth',
+    'https://pokeapi.co/api/v2/pokemon/diglett',
+    'https://pokeapi.co/api/v2/pokemon/dugtrio',
+    'https://pokeapi.co/api/v2/pokemon/meowth',
+    'https://pokeapi.co/api/v2/pokemon/persian',
+    'https://pokeapi.co/api/v2/pokemon/psyduck',
+    'https://pokeapi.co/api/v2/pokemon/golduck',
+    'https://pokeapi.co/api/v2/pokemon/mankey',
+    'https://pokeapi.co/api/v2/pokemon/primeape',
+    'https://pokeapi.co/api/v2/pokemon/growlithe',
+    'https://pokeapi.co/api/v2/pokemon/arcanine',
+    'https://pokeapi.co/api/v2/pokemon/poliwag',
+    'https://pokeapi.co/api/v2/pokemon/poliwhirl',
+    'https://pokeapi.co/api/v2/pokemon/poliwrath',
+    'https://pokeapi.co/api/v2/pokemon/abra',
+    'https://pokeapi.co/api/v2/pokemon/kadabra',
+    'https://pokeapi.co/api/v2/pokemon/alakazam',
+    'https://pokeapi.co/api/v2/pokemon/machop',
+    'https://pokeapi.co/api/v2/pokemon/machoke',
+    'https://pokeapi.co/api/v2/pokemon/machamp',
+    'https://pokeapi.co/api/v2/pokemon/bellsprout',
+    'https://pokeapi.co/api/v2/pokemon/weepinbell',
+    'https://pokeapi.co/api/v2/pokemon/victreebel',
+    'https://pokeapi.co/api/v2/pokemon/tentacool',
+    'https://pokeapi.co/api/v2/pokemon/tentacruel',
+    'https://pokeapi.co/api/v2/pokemon/geodude',
+    'https://pokeapi.co/api/v2/pokemon/graveler',
+    'https://pokeapi.co/api/v2/pokemon/golem',
+    'https://pokeapi.co/api/v2/pokemon/ponyta',
+    'https://pokeapi.co/api/v2/pokemon/rapidash',
+    'https://pokeapi.co/api/v2/pokemon/slowpoke',
+    'https://pokeapi.co/api/v2/pokemon/slowbro',
+    'https://pokeapi.co/api/v2/pokemon/magnemite',
+    'https://pokeapi.co/api/v2/pokemon/magneton',
+    'https://pokeapi.co/api/v2/pokemon/farfetchd',
+    'https://pokeapi.co/api/v2/pokemon/doduo',
+    'https://pokeapi.co/api/v2/pokemon/dodrio',
+    'https://pokeapi.co/api/v2/pokemon/seel',
+    'https://pokeapi.co/api/v2/pokemon/dewgong',
+    'https://pokeapi.co/api/v2/pokemon/grimer',
+    'https://pokeapi.co/api/v2/pokemon/muk',
+    'https://pokeapi.co/api/v2/pokemon/shellder',
+    'https://pokeapi.co/api/v2/pokemon/cloyster',
+    'https://pokeapi.co/api/v2/pokemon/gastly',
+    'https://pokeapi.co/api/v2/pokemon/haunter',
+    'https://pokeapi.co/api/v2/pokemon/gengar',
+    'https://pokeapi.co/api/v2/pokemon/onix',
+    'https://pokeapi.co/api/v2/pokemon/drowzee',
+    'https://pokeapi.co/api/v2/pokemon/hypno',
+    'https://pokeapi.co/api/v2/pokemon/krabby',
+    'https://pokeapi.co/api/v2/pokemon/kingler',
+    'https://pokeapi.co/api/v2/pokemon/voltorb',
+    'https://pokeapi.co/api/v2/pokemon/electrode',
+    'https://pokeapi.co/api/v2/pokemon/exeggcute',
+    'https://pokeapi.co/api/v2/pokemon/exeggutor',
+    'https://pokeapi.co/api/v2/pokemon/cubone',
+    'https://pokeapi.co/api/v2/pokemon/marowak',
+    'https://pokeapi.co/api/v2/pokemon/hitmonlee',
+    'https://pokeapi.co/api/v2/pokemon/hitmonchan',
+    'https://pokeapi.co/api/v2/pokemon/lickitung',
+    'https://pokeapi.co/api/v2/pokemon/koffing',
+    'https://pokeapi.co/api/v2/pokemon/weezing',
+    'https://pokeapi.co/api/v2/pokemon/rhyhorn',
+    'https://pokeapi.co/api/v2/pokemon/rhydon',
+    'https://pokeapi.co/api/v2/pokemon/chansey',
+    'https://pokeapi.co/api/v2/pokemon/tangela',
+    'https://pokeapi.co/api/v2/pokemon/kangaskhan',
+    'https://pokeapi.co/api/v2/pokemon/horsea',
+    'https://pokeapi.co/api/v2/pokemon/seadra',
+    'https://pokeapi.co/api/v2/pokemon/goldeen',
+    'https://pokeapi.co/api/v2/pokemon/seaking',
+    'https://pokeapi.co/api/v2/pokemon/staryu',
+    'https://pokeapi.co/api/v2/pokemon/starmie',
+    'https://pokeapi.co/api/v2/pokemon/mr-mime',
+    'https://pokeapi.co/api/v2/pokemon/scyther',
+    'https://pokeapi.co/api/v2/pokemon/jynx',
+    'https://pokeapi.co/api/v2/pokemon/electabuzz',
+    'https://pokeapi.co/api/v2/pokemon/magmar',
+    'https://pokeapi.co/api/v2/pokemon/pinsir',
+    'https://pokeapi.co/api/v2/pokemon/tauros',
+    'https://pokeapi.co/api/v2/pokemon/magikarp',
+    'https://pokeapi.co/api/v2/pokemon/gyarados',
+    'https://pokeapi.co/api/v2/pokemon/lapras',
+    'https://pokeapi.co/api/v2/pokemon/ditto',
+    'https://pokeapi.co/api/v2/pokemon/eevee',
+    'https://pokeapi.co/api/v2/pokemon/vaporeon',
+    'https://pokeapi.co/api/v2/pokemon/jolteon',
+    'https://pokeapi.co/api/v2/pokemon/flareon',
+    'https://pokeapi.co/api/v2/pokemon/porygon',
+    'https://pokeapi.co/api/v2/pokemon/omanyte',
+    'https://pokeapi.co/api/v2/pokemon/omastar',
+    'https://pokeapi.co/api/v2/pokemon/kabuto',
+    'https://pokeapi.co/api/v2/pokemon/kabutops',
+    'https://pokeapi.co/api/v2/pokemon/aerodactyl',
+    'https://pokeapi.co/api/v2/pokemon/snorlax',
+    'https://pokeapi.co/api/v2/pokemon/articuno',
+    'https://pokeapi.co/api/v2/pokemon/zapdos',
+    'https://pokeapi.co/api/v2/pokemon/moltres',
+    'https://pokeapi.co/api/v2/pokemon/dratini',
+    'https://pokeapi.co/api/v2/pokemon/dragonair',
+    'https://pokeapi.co/api/v2/pokemon/dragonite',
+    'https://pokeapi.co/api/v2/pokemon/mewtwo',
+    'https://pokeapi.co/api/v2/pokemon/mew'
+];
+
+const container = document.getElementById('pokemon-container');
+
+async function fetchPokemonData(url) {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+}
+
+async function displayPokemon() {
+    for (const url of pokemonUrls) {
+        const pokemon = await fetchPokemonData(url);
+        const card = document.createElement('div');
+        card.classList.add('pokemon-card');
+        
+        const image = document.createElement('img');
+        image.src = pokemon.sprites.front_default;
+        image.alt = pokemon.name;
+
+        const name = document.createElement('h2');
+        name.textContent = pokemon.name;
+
+        const types = document.createElement('p');
+        types.textContent = `Type: ${pokemon.types.map(typeInfo => typeInfo.type.name).join(', ')}`;
+
+        card.appendChild(image);
+        card.appendChild(name);
+        card.appendChild(types);
+        container.appendChild(card);
+    }
+}
+
+displayPokemon();
