@@ -1,95 +1,56 @@
+/* Base styles for the entire page */
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+}
+
+/* Main content container */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Page title */
+h1 {
+    text-align: center;
     color: #333;
 }
 
-header {
-    background-color: #ffcb05;
-    width: 100%;
-    padding: 20px 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+/* Grid layout for Pokémon list */
+.pokemon-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-gap: 20px;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #3b4cca;
-    letter-spacing: 2px;
-}
-
-#banner img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
-    margin-bottom: 20px;
-}
-
-#pokemon-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    width: 90%;
-    max-width: 1200px;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
+/* Styling for each Pokémon card */
 .pokemon-card {
     background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    width: 220px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+/* Styling for Pokémon name */
+.pokemon-name {
+    font-weight: bold;
     text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
+    margin-bottom: 10px;
 }
 
-.pokemon-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+/* Styling for Pokémon image */
+.pokemon-image {
+    display: block;
+    margin: 0 auto;
 }
 
-.pokemon-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-}
-
-.pokemon-card h2 {
-    margin: 15px 0 10px;
-    font-size: 1.5em;
-    color: #3b4cca;
-}
-
-.pokemon-card p {
-    margin: 0 15px 20px;
-    color: #666;
-    font-size: 1em;
-}
-
-@media (max-width: 600px) {
-    .pokemon-card {
-        width: 100%;
-    }
-
-    #pokemon-container {
-        width: 100%;
-        padding: 10px;
-    }
-
-    header h1 {
-        font-size: 2em;
-    }
-
-    #banner img {
-        max-height: 150px;
-    }
+/* Styling for Pokémon data (height and weight) */
+.pokemon-data {
+    text-align: center;
 }
